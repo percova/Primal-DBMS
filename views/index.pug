@@ -1,0 +1,60 @@
+html
+  head
+    title My site
+  body
+    h2 Selected table
+    select(class='table')
+      option
+      each table in tables
+        option(value=table)=table
+    button(class='create-table') Create new table
+    h1 Add record
+    div(class='add-form')
+      div(class='field')
+        input(type='text' placeholder='Key' class='key')
+        input(type='text' placeholder='Value' class='value')
+    button(class='add-field') +
+    br
+    br
+    button(class='add-button') Add record
+    button(class='flush') Flush records
+    table
+      tbody
+    br
+    br
+    br
+    h1 Dev DB functions
+    div(class='find-by-id')
+      h2 Find by id
+      span Id: 
+      input(type='text')
+      button Find
+      br
+      p(class='out')
+    div(class='find-by')
+      h2 Find by field
+      span Field: 
+      input(type='text' class='find-field')
+      span Value: 
+      input(type='text' class='find-value')
+      button Find
+      br
+      p(class='out')
+    div(class='find-one-by')
+      h2 Find one by field
+      span Field: 
+      input(type='text' class='find-field')
+      span Value: 
+      input(type='text' class='find-value')
+      button Find
+      br
+      p(class='out')
+    div(class='autoflush')
+      h2 Auto-flush
+      span Set seconds interval: 
+      input(type='text')
+      button(id='startauto') Start
+      button(id='stopauto') Stop
+      br
+    script(src='jquery.js')
+    script(src='requests.js')
